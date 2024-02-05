@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <title>Resume Builder</title>
+</head>
+
+<body class="bg-body-tertiary">
+    <div class="container py-5" id="cv-form" >
+        <h1 id="title" class=" card bg-primary-subtle text-center my-2">Resume Builder</h1>
+
+        <div class="row">
+
+            <div class="col-md-6 mt-3">
+                <h3 class="bg-secondary-subtle text-center">Personal Information</h3>
+
+                <div class="form-group">
+
+                    <label for="name" >Enter your Name</label>
+                    <input type="text" placeholder="Enter Here" name="name" id="nameField" class="form-control">      
+                </div>
+
+                <div class="form-group mt-4">
+
+                    <label for="post">Enter your Position</label>
+                    <input type="text" placeholder="Enter Here" name="post" id="postField" class="form-control">      
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="imgField">Select Your Profile Photo</label>
+                    <input type="file"  id="imgField" class="form-control" />
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="phone">Enter your Phone no.</label>
+                    <input type="text" placeholder="Enter Here" name="phone" id="phone" class="form-control">
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="email">Enter your Email</label>
+                    <input type="text" placeholder="Enter Here" name="email" id="email" class="form-control">
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="address">Enter your Address</label>
+                    <textarea name="address" id="address" cols="30" rows="3" class="form-control" placeholder="Type Here"></textarea>
+                </div>
+
+                <p class="text-secondary my-3 ">Important Links</p>
+                
+                <div class="form-group ">
+
+                    <label for="naukri">Naukri</label>
+                    <input type="text" placeholder="Enter Link" name="naukri" id="naukrilink" class="form-control">      
+                </div>
+
+                
+                <div class="form-group ">
+
+                    <label for="linkdin">LinkedIn</label>
+                    <input type="text" placeholder="Enter Link" name="linkdin" id="linkdinlink" class="form-control">      
+                </div>
+
+                <div class="form-group ">
+
+                    <label for="fb">Facebook</label>
+                    <input type="text" placeholder="Enter Link" name="fb" id="fblink" class="form-control">      
+                </div>
+
+                <div class="form-group  mt-4">
+
+                    <label for="skills">Skills</label>
+                    <textarea name="skills" id="skills" cols="30" rows="4" class="form-control skillField" placeholder="Type Here"></textarea>
+                </div>
+
+                <div class="form-group mt-4" id="achive">
+                    <label for="achive">Achivements</label>
+                    <textarea name="achive" id="achive" cols="30" rows="2" class="form-control acField" placeholder="Type Here"></textarea>
+                    
+                    <!--<div class="container text-center mt-2" id="acAddButton">
+                        <button type="button" onclick="addNewAchive()" class="btn btn-outline-primary btn-sm">Add</button>
+                    </div>-->
+                </div>
+               
+            </div>
+
+
+
+
+            <div class="col-md-6 mt-3">
+                <h3 class="bg-secondary-subtle text-center">Professional Information</h3>
+
+                <div class="form-group ">
+                    <label for="obj">Objective</label>
+                    <textarea name="obj" id="obj" cols="30" rows="3" class="form-control objField" placeholder="Type Here"></textarea>
+                </div>
+
+                <div class="form-group mt-4" id="academics">
+                    <label for="academics">Academics</label>
+                    <textarea name="academics" id="academics" cols="30" rows="4" class="form-control aqField" placeholder="Type Here"></textarea>
+                    
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button type="button" onclick="addNewField()" class="btn btn-outline-primary btn-sm" >Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4" id="workex">
+                    <label for="workex">Work Experience</label>
+                    <textarea name="workex" id="workex" cols="30" rows="4" class="form-control weField" placeholder="Type Here"></textarea>
+                    
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button type="button" onclick="addNewWEField()" class="btn btn-outline-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4" id="proj">
+
+                    <label for="proj">Projects</label>
+                    <textarea name="proj" id="proj" cols="30" rows="4" class="form-control proField" placeholder="Type Here"></textarea>
+                    
+                    <div class="container text-center mt-2" id="projAddButton">
+                        <button type="button" onclick="addNewProjField()" class="btn btn-outline-primary btn-sm">Add</button>
+                    </div>
+
+                    <!--<input type="text" placeholder="Enter Link" name="proj" id="projlink" class="form-control"> -->     
+                </div>
+
+               <!--<div class="form-group " id="achive">
+                    <label for="achive">Achivements</label>
+                    <textarea name="achive" id="achive" cols="30" rows="4" class="form-control acField" placeholder="Type Here"></textarea>
+                    
+                    <div class="container text-center mt-2" id="acAddButton">
+                        <button type="button" onclick="addNewAchive()" class="btn btn-outline-primary btn-sm">Add</button>
+                    </div>
+                </div>-->
+
+            </div>
+
+        </div>
+
+        <div class="container text-center mt-3">
+            <button onclick="generateCV()"  class="btn btn-primary btn-lg">Generate Resume</button>
+        </div>
+    
+<br>
+<br>
+
+<!---------------------------------------CV TEMPLATE------------------------------------------------------->
+
+    <div class="container " id="cv-template" >
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <img src="Images/profile.jpg" alt="" class="img-fluid myimg" id="imgTemplate">
+
+                <div class="container">
+                   <!-- <p id="nameT1" class="nameT1">Prerna Daphale</p>-->
+                    <h3 class="mt-4">CONTACT</h3>
+                    <p id="phT">  +919145634223 </p>
+                    <p id="emailT"> xyz@gmail.com </p>
+                    <p id="addressT"> Location - Pincode</p>
+                </div>
+
+                <hr>
+                
+
+                <h3 class="mt-4">LINKS</h3>
+                <p id="fbT"><a href="#">https://www.google.com</a></p>
+                <p id="naukriT"><a href="#">https://www.google.com</a></p>
+                <p id="linkinT"><a href="#">https://www.google.com</a></p>
+                
+                <hr>
+
+                <h3 class="text-center mt-4">SKILLS</h3 >
+                <div id="skillT">
+                    <p>Lorem, ipsum.</p>
+                    <p>Lorem, ipsum.</p>
+                </div>
+                <hr>
+
+                <h3 class="text-center mt-4">ACHIEVMENTS</h3>
+                <div id="achvT">
+                   <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                
+            </div>
+
+            <div class="col-md-8 py-5">
+                <h1 class="text-center text-uppercase" id="nameT"><b>Name </b></h1>
+                <h5 class="text-center" id="postT"><b>Position</b></h5>
+                <!--<p class="text-center">Software Engineer</p>-->
+                
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>OBJECTIVE</h3>
+                    </div>
+                    <div class="card-body" id="objT">
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>ACADEMICS</h3>
+                    </div>
+                    <div class="card-body" >
+                        <ul id="acadT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non id voluptates aut. Atque vero corrupti tempora a? Facilis totam quis ullam fuga praesentium veritatis rerum iure dolor. Aliquid, aut culpa.</li>
+                       
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non id voluptates aut. Atque vero corrupti tempora a? Facilis totam quis ullam fuga praesentium veritatis rerum iure dolor. Aliquid, aut culpa.</li>
+                       
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non id voluptates aut. Atque vero corrupti tempora a? Facilis totam quis ullam fuga praesentium veritatis rerum iure dolor. Aliquid, aut culpa.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>WORK EXPERIENCE</h3>
+                    </div>
+                    <div class="card-body" >
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non id voluptates aut. Atque vero corrupti tempora a? Facilis totam quis ullam fuga praesentium veritatis rerum iure dolor. Aliquid, aut culpa.</li>
+                       
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non id voluptates aut. Atque vero corrupti tempora a? Facilis totam quis ullam fuga praesentium veritatis rerum iure dolor. Aliquid, aut culpa.</li>
+                       
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non id voluptates aut. Atque vero corrupti tempora a? Facilis totam quis ullam fuga praesentium veritatis rerum iure dolor. Aliquid, aut culpa.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>PROJECTS</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="projT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, optio?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, optio?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-center">
+                    <button onclick="printcv()" type="button" class="btn btn-outline-primary">Print CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
